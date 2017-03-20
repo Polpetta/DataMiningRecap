@@ -1,0 +1,29 @@
+\section{MSE}
+
+\subsection{Training MSE}
+Il \textit{training MSE}\footnote{Mean Squared Error} \`e l'errore quadratico 
+medio calcolato sul training data, e corrisponde a:
+
+\[ MSE = \frac{1}{n} \sum_{i=1}^n \{y_i - \hat{f}(x_i)\}^2 \]
+
+\begin{itemize}
+ \item $\hat{f}(x_i)$ indica la predizione che $\hat{f}$ da per l'osservazione 
+$i$-esima
+\end{itemize}
+
+
+Questo valore indica quanto il valore per l'osservazione data \`e vicina al suo 
+valore vero. Se l'MSE \`e piccolo significa che il valore predetto \`e molto 
+vicino alla vera risposta.
+
+\subsection{Test MSE}
+
+Pi\`u importante \`e l'MSE applicato al \textit{test set}, che si calcola con:
+
+\[ Ave\{y_0 - \hat{f}(x_0)\}^2 \]
+
+Dove:
+\begin{itemize}
+ \item $Ave$ sta per \textit{average}, ovvero la media, che viene calcolata su 
+molte osservazioni ($y_0$, $x_0$)
+\end{itemize}
