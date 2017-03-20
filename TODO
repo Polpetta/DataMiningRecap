@@ -1,17 +1,17 @@
-Accuratezza(7 I)
-MSE(12 I)
-Distorsione (13 I) 
-Varianza (13 I)
-Modello di regressione lineare semplice (4 II)
-RSS(5 II)
-Varianza (6 II)
-Covarianza (6 II)
-Correlazione (6 II)
-SE (10 II)
-Intervalli di confidenza (11 II + Alcune note di inferenze...)
+Accuratezza(7 I) -- Da verificare
+MSE(12 I) -- Da verificare
+Distorsione (13 I) -- Da verificare
+Varianza (13 I) -- ??
+Modello di regressione lineare semplice (4 II) -- Da verificare
+RSS(5 II) -- Da verificare
+Varianza (6 II) -- ??
+Covarianza (6 II) -- Da verificare
+Correlazione (6 II) -- Da verificare
+SE (10 II) -- Da verificare
+Intervalli di confidenza (11 II + Alcune note di inferenze...) -- Da verificare
 Verifica di ipotesi (14 II) -> NB : OUTPUT R (db)
-R^2 (21 II)
-RSE (22 II)
+R^2 (21 II) -- Da verificare
+RSE (22 II) -- Da verificare
 Analisi dei residui (grafica) (23 II)
 Modello di regressione lineare multivariato (26 II)
 F (30 II)
