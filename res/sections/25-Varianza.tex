@@ -1,2 +1,15 @@
 \section{Varianza}
 
+Dato un valore $x_0$, il valore atteso MSE si scompone così
+
+\begin{equation}
+E\{y_0-\hat{f(x_0)}\}^2 = Var\{\hat{f(x_0)\} + [Bias\{\hat{f(x_0)\}]^2 + Var(\epsilon)
+\end{equation}
+
+\begin{itemize}
+\item $Var\{\hat{f(x_0)\}$ varianza relativa ai cambiamenti di $\hat{f}$ ottenibili variando il training set;
+\item $[Bias\{\hat{f(x_0)\}]^2$ distorsione dovuta alla descrizione di un fenomeno anche complesso sulla base di una formula funzionale $f$;
+\item $Var(\epsilon)$ errore irriducibile.
+\end{itemize}
+
+In generale, un metodo con bassa distorsione presenta alta varianza e viceversa.
