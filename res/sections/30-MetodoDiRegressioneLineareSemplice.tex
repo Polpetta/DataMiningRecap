@@ -1,0 +1,19 @@
+\section{Metodo di regressione lineare semplice}
+Formula generale:
+\[ Y = \beta_0 + \beta_1 X + \epsilon \]
+dove, nel caso del criterio dei minimi quadrati:
+\begin{itemize}
+ \item $\beta_1$, esplicativa, $\hat{\beta_1} = 
+\frac{COV(X,Y)}{VAR(X)} = \frac{\sigma_{XY}}{\sigma^2_{X}}$;
+ \item $\beta_0$, intercetta, $\hat{\beta_0} = \overline{y} - \hat{\beta_1} 
+\overline{x}$ \\
+  con:
+  \begin{itemize}
+   \item $\overline{x} = \sum_{i=1}^n x_i/n $;
+   \item $\overline{y} = \sum_{i=1}^n y_i/n $;
+   \item $n$ \`e la grandezza del campione.
+  \end{itemize}
+
+ \item $\epsilon$ rappresenta il termine di errore (sempre presente).
+\end{itemize}
+
