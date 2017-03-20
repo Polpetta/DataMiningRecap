@@ -1,0 +1,29 @@
+\section{$R^2$}
+
+$R^2$, detto anche \textit{valutazione di un modello}, \`e la proporzione della 
+variabilit\`a di $Y$ che viene spiegata dalla regressione usando $X$.
+La devianza totale risulta essere:
+
+\[ devianza\ totale = devianza\ spiegata\ +\ devianza\ residua\]
+
+\[ \sum_{i=1}^n (y_i - \overline{y})^2 = \sum_{i=1}^n (\hat{y}_i - 
+\overline{y})^2 + \sum_{i=1}^n (y_i - \hat{y}_i)^2 \]
+
+Dove la devianza residua risulta essere l'RSS (vedi \ref{rss})
+
+$R^2$ si ottiene quindi:
+
+\[ R^2 = \frac{devianza\ spiegata}{devianza\ totale} = \frac{\sum_{i=1}^n 
+(\hat{y}_i - \overline{y})^2}{\sum_{i=1}^n (y_i - \overline{y})^2} = 1 - 
+\frac{devianza\ residua}{devianza\ totale} = 1 - \frac{\sum_{i=1}^n (y_i - 
+\hat{y}_i)^2}{\sum_{i=1}^n (y_i - \overline{y})^2} \]
+
+\paragraph*{Propriet\`a}
+\begin{itemize}
+ \item $0 \le R^2 \le 1$
+ \item Un $R^2$ alto indica un migliore adattamento del modello delle 
+osservazioni
+ \item $R^2$ pi\`u alto \`e meglio \`e, ma pu\`o essere indice di un
+\textit{overfitting}, e inoltre $R^2$ \`e una stima ottimistica, e quindi anche 
+se alto non \`e detto che vada veramente bene il modello.
+\end{itemize}

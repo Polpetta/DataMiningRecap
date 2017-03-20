@@ -1,0 +1,19 @@
+\section{Intervalli di Confidenza}
+Aggiunge informazione alla stima di un parametro, associando una misura di 
+precisione. L'intervallo di precisione \`e da leggersi come $(1-\alpha) \% $ 
+degli intervalli numerici calcolabili conterr\`a il valore calcolato.\\
+Per campioni di numero ridotto ($\le$ 20) si pu\`o considerare:
+\[ \frac{\hat{\beta_1} - \beta_1}{SE(\hat{\beta_1})} \sim t_{n-2} \]
+Ovvero che si distribuisca come una t di Student con n-2 gradi di libert\`a. 
+Quindi l'intervallo di confidenza \'e:
+\[ [ \hat{\beta_1} - t_{\alpha/2, n-2} SE(\hat{\beta_1}) ; \hat{\beta_1} + 
+t_{\alpha/2, n-2} SE(\hat{\beta_1}) ] \]
+Dove $t_{\alpha/2, n-2}$ quantile di livello $\alpha/2$ di una $t_{n-2}$
+Per campioni di numero elevati ($\ge$ 20) si pu\`o considerare:
+\[ \frac{\hat{\beta_1} - \beta_1}{SE(\hat{\beta_1})} \sim N(0,1) \]
+Ovvero che si distribuisca come una normale di media 0 e varianza 1. 
+Quindi l'intervallo di confidenza \'e:
+\[ [ \hat{\beta_1} - z_{\alpha/2} SE(\hat{\beta_1}) ; \hat{\beta_1} +  
+z_{\alpha/2} SE(\hat{\beta_1}) ] \]
+Dove $z_{\alpha/2}$ quantile di livello $\alpha/2$ di una $N(0,1)$
+\\ Per $\beta_0$ si procede in modo uguale.
