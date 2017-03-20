@@ -69,7 +69,28 @@ che sotto l'ipotesi nulla ha distribuzione $t_{n-2}$.
 
 \subsection{p-value}
 
-È semplice calcolare la probabilità di osservare un valore maggiore o uguale di $|t|$, assumendo ${\beta}_0$. Chiamiamo questa probabilità \textit{p-value}. Interpretiamo il p-value come segue: un valore piccolo indica che è improbabile osservare un'associazione sostanziale tra il predittore e la reazione per caso, in assenza di una reale associazione tra il predittore e la reazione. Rifiutiamo l'ipotesi nulla (dichiariamo che esiste una relazione tra $X$ e $Y$) se il p-value è sufficientemente piccolo.
+È semplice calcolare la probabilità di osservare un valore maggiore o uguale di $|t|$, assumendo ${\beta}_0$. Chiamiamo questa probabilità \textit{p-value} o ${\alpha}^oss$. Interpretiamo il p-value come segue: un valore piccolo indica che è improbabile osservare un'associazione tra $X$ e $Y$ dovuta al caso caso, in assenza di una reale associazione tra  $X$ e $Y$. Rifiutiamo l'ipotesi nulla (dichiariamo che esiste una relazione tra $X$ e $Y$) se il p-value è sufficientemente piccolo.
+
+Il p-value può essere interpretato come la probabilità di osservare per la statistica test valori almeno tanto estremi
+quanto quello osservato sotto $H_0$, nella direzione di $H_1$. In alternativa, può essere considerato il più piccolo \textit{livello di significatività} che conduce al rifiuto di $H_0$.
+
+
+
+\begin{itemize}
+\item $H_{0}: {\beta}_1 = {{\beta}_1}^{H_0}$ contro $H_{0}: {\beta}_1 \neq {{\beta}_1}^{H_0}$. Dato $t^{oss}$ il valore osservato di $t$, si calcola ${\alpha}^{oss}$ come \begin{equation}
+{\alpha}^{oss} = 2\min{P(t_{n-2} > t^{oss}),P(t_{n-2} < t^{oss})}
+\end{equation}
+\item $H_{0}: {\beta}_1 < {{\beta}_1}^{H_0}$ contro $H_{0}: {\beta}_1 >= {{\beta}_1}^{H_0}$
+\begin{equation}
+{\alpha}^{oss} = P(t_{n-2} > t^{oss})
+\end{equation}
+\item $H_{0}: {\beta}_1 >= {{\beta}_1}^{H_0}$ contro $H_{0}: {\beta}_1 < {{\beta}_1}^{H_0}$
+\begin{equation}
+{\alpha}^{oss} = P(t_{n-2} < t^{oss})
+\end{equation}
+\end{itemize}
+
+In modo analogo si procede per ${\beta}_0$
 
 \begin{figure}[H]
 \centering
