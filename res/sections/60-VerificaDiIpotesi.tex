@@ -46,6 +46,19 @@ Si rifiuta l'ipotesi nulla al livello di significatività $\alpha$ prefissato se
 
 I test per valutare se un parametro si possa considerare pari a 0 si chiamano \textit{test di significatività}.
 
+Ci sono della alternative unilaterali:
+
+\begin{itemize}
+\item $H_{0}: {\beta}_1 = 0 \text{ o } H_{0}: {\beta}_1 <= 0 \text{ vs } H_{1}:{\beta}_1 > 0$. La statistica test rimane la stessa. Si rifiuta l'ipotesi nulla al livello di significatività $\alpha$ se
+\begin{equation}
+t^{oss} > t_{1-\alpha;n-2}
+\end{equation}
+\item $H_{0}: {\beta}_1 = 0 \text{ o } H_{0}: {\beta}_1 >= 0 \text{ vs } H_{1}:{\beta}_1 < 0$. La statistica test rimane la stessa. Si rifiuta l'ipotesi nulla al livello di significatività $\alpha$ se
+\begin{equation}
+t^{oss} < t_{\alpha;n-2}
+\end{equation}
+\end{itemize}
+
 La verifica d'ipotesi precedente si applica anche nel caso in cui si testino valori di ${\beta}_1$ e (${\beta}_0$) diversi da 0. In generale per $H_0: {\beta}_1 = {{\beta}_1}^{H_0}$ contro ${\beta}_1 \neq {{\beta}_1}^{H_0}$ si usa la statistica test
 
 \begin{equation}
@@ -61,4 +74,5 @@ che sotto l'ipotesi nulla ha distribuzione $t_{n-2}$.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{t_stat_p_value}
+\caption{t-statistica e p-value per il problema dell'Advertising}
 \end{figure}
