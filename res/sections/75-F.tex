@@ -8,12 +8,12 @@ dove $p$ \`e il numero di variabili. L'alternativa \`e:
 	$H_{1}$\textit{: almeno un $\beta_{j}$ diverso da 0}
 \end{center}
 La statistica-test per questo test di significativit\`a \`e data dalla \textbf{statistica F}. Sia n il numero di osservazioni e p il numero di proprieta.
-\[ F = \frac{total deviance - residual deviance}{residual deviance} = \frac{n\sigma^2_{Y} - RSS}{RSS} * \frac{n - p - 1}{p} = \frac{R^{2}}{1 - R^{2}} * \frac{n - p - 1}{p} \]
+\[ F = \frac{\text{total deviance} - \text{residual deviance}}{\text{residual-deviance}} = \frac{n\sigma^2_{Y} - RSS}{RSS} * \frac{n - p - 1}{p} = \frac{R^{2}}{1 - R^{2}} * \frac{n - p - 1}{p} \]
 La statistica F è una curva asimmetrica positiva con una coda sulla destra.
 Quando non c'\`e nessuna relazione tra Y e le esplicative ci si aspetta \textbf{F = 1}. D'altra parte, se $H_{1}$ è vera il valore di F sar\`a maggiore di 1.
 
 È possibile fare la stessa cosa anche per un sottoinsieme di $q$ parametri (modello annidato). In questo caso vale:
 \[ F = \frac{RSS_{0} - RSS}{RSS} * \frac{n - p - 1}{q} \]
-In questo caso valori alti indicano anche un peggioramento dal modello di partenza (con più variabili). Se $q = 1$ allora si ha $F=t^{2}$ ed esprime l'effetto parziale di un certo $X_{j}$ su Y tenendo ``ferme" le altre variabili.
+In questo caso valori alti indicano anche un peggioramento dal modello di partenza (con più variabili). Se $q = 1$ allora si ha $F=t^{2}$ ed esprime l'effetto parziale di un certo $X_{j}$ su Y tenendo ``ferme'' le altre variabili.
 
-Si può aggiungere una termine detto \textbf{``interaction term"} quando si sospetta un effetto sinergico/combinato tra due covarianti sulla risposta.
+Si può aggiungere una termine detto \textbf{``interaction term''} quando si sospetta un effetto sinergico/combinato tra due covarianti sulla risposta.
