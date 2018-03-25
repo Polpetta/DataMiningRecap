@@ -38,12 +38,12 @@ abline(h=2, col='red')
 par(mfrow=c(2,2))
 plot(m)
 #intervallo di confidenza per beta1 al livello 0.95
-#il primo parametro indica i quantili, il secondo i gradi di libertà
+#il primo parametro indica i quantili, il secondo i gradi di liberta'
 qt(0.025, df=506-2)
 #verifichiamo che lo 0 rientri in [stima - tDiStudent * SE, stima + tDiStudent * SE]
 -0.95005 -qt(0.975, df=506-2)* 0.03873
 -0.95005 +qt(0.975, df=506-2)* 0.03873
-#confint riassume tutto questo, e se non altrimenti specificato imposta il livello a o.95
+#confint riassume tutto questo, e se non altrimenti specificato imposta il livello a 0.95
 confint(m)
 confint(m, level=0.90)
 
