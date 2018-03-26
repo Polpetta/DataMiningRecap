@@ -1,0 +1,51 @@
+\section{Classificazione}
+
+In questo caso la response variabile Y è chiamata \textbf{categorica} ed è
+qualitativa.
+
+Predirre una variabile categorica ha lo scopo di assegnare una osservazione
+a una categoria/classe.
+
+Esempio: predirre se si verifichera un evento climatico disastroso date alcune
+condizioni come temperatura, pressione, vento ecc\dots
+
+Nel caso di una response variable binaria non è possibile usare il metodo di
+regressione lineare poichè i valori che assume non sono reali ma discreti (0 o
+1).
+
+Una ``soluzione'' consiste nell'usare una funzione che restituisca valori reali
+solamente nell'intervallo [0,1]. Il modello comunemente utilizzato per questo
+scopo è il \textbf{modello di regressione logistica}.
+
+\begin{equation}
+P(Y=1|X) = \frac{e^{\beta_0+\beta_1 X}}{1 + e^{\beta_0+\beta_1 X}}
+\end{equation}
+
+Questa funzione assume valori in [0,1] indipendentemente da $\beta_0$ e
+$\beta_1$.
+
+Gli \textbf{odds} sono definiti dalla funzione:
+
+\begin{equation}
+\frac{P(Y=1|X)}{1-P(Y=1|X)} = e^{\beta_0+\beta_1 X}
+\end{equation}
+
+Valori vicini a 0 $\rightarrow$ probabilità molto bassa che Y=1.
+
+Valori vicini a 1 $\rightarrow$ probabilità molto alta che Y=1.
+
+I \textbf{logit} o \textbf{logodds} applicano il logaritmo agli odds:
+
+\begin{equation}
+\log \left( \frac{P(Y=1|X)}{1-P(Y=1|X)} \right) = \beta_0+\beta_1 X
+\end{equation}
+
+Questo termine \textbf{logit} è lineare in X.
+
+
+
+
+
+
+
+
