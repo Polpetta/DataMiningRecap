@@ -1,5 +1,7 @@
 \section{Esercizi}
 
+\subsection{Domande a risposta multipla}
+
 In the estimated linear regression model $\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X$ we have $\hat{\beta_1} = 0$. Thus:
 
 \begin{itemize}
@@ -13,18 +15,18 @@ In the hypothesis testing, the observed significance level (\textbf{p-value}) is
 
 \begin{itemize}
 \item between 0 and $+\infty$
-\item \textbf{between -1 and 1} - risposta esatta
+\item between -1 and 1
 \item the type II error
-\item none of the above
+\item \textbf{none of the above} - risposta esatta
 \end{itemize}
 
 In a linear regression model, the accuracy of the least squares estimates is measured using:
 
 \begin{itemize}
-\item standard error
+\item \textbf{standard error} - risposta esatta
 \item correlation
 \item bias
-\item \textbf{sum of the residuals} - risposta esatta
+\item sum of the residuals
 \end{itemize}
 
 Errors in the linear regression model are assumed to be:
@@ -44,6 +46,34 @@ Il livello di significatività osservato (detto anche p-value) è:
 \item una variabile casuale
 \item una misura del legame lineare tra X e Y
 \end{itemize}
+
+Il residual standard error (RSE) per un modello $Y = \beta_0 + \beta_1 + \epsilon$
+con errori che si assumono $N(0,\sigma^2)$ e che viene stimato ai minimi quadrati è:
+
+\begin{itemize}
+\item la stima di $\beta_1$
+\item la stima della media degli errori
+\item \textbf{la stima di $\sigma$} - risposta esatta
+\item il p-value associato al test di bontà di adattamento del modello
+\end{itemize}
+
+In un modello di regressione lineare, il problema della multicollinearità deriva da:
+
+\begin{itemize}
+\item bassa correlazione tra gli errori $\epsilon$ e la risposta
+\item bassa correlazione tra tutte le esplicative
+\item \textbf{alta correlazione tra almeno due esplicative} - risposta esatta
+\item bassa correlazione tra almeno un errore $\epsilon$ e le esplicative
+\end{itemize}
+
+\subsection{Note}
+
+Le variabili dummy create da R per variabili qualitative seguono l'ordinamento lessicografico.\\
+
+Il principio di gerarchia stabilisce che se è presente un termine interazione allora anche i termini
+che lo compongono devono essere presenti nel modello.
+
+
 
 
 
