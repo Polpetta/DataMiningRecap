@@ -47,7 +47,7 @@ Il livello di significatività osservato (detto anche p-value) è:
 \item una misura del legame lineare tra X e Y
 \end{itemize}
 
-Il residual standard error (RSE) per un modello $Y = \beta_0 + \beta_1 + \epsilon$
+Il residual standard error (RSE) per un modello $Y = \beta_0 + \beta_1X + \epsilon$
 con errori che si assumono $N(0,\sigma^2)$ e che viene stimato ai minimi quadrati è:
 
 \begin{itemize}
@@ -69,14 +69,15 @@ In un modello di regressione lineare, il problema della multicollinearità deriv
 Il residuo in un modello in cui $y_1$ indica l’osservazione i-esima della variabile
 risposta e $\hat{y_i}$ la previsione basata sul modello è pari a: $y_i - \hat{y_i}$\\
 
-Sia dato il modello di regressione lineare semplice $Y = \beta_0 + \beta_1 + \epsilon$
+Sia dato il modello di regressione lineare semplice $Y = \beta_0 + \beta_1X + \epsilon$
 Sia 1.325 la stima ai minimi quadrati di $\beta_1$ e 0.23 il suo standard error. 
 La statistica test per la verifica d'ipotesi per $H_0 : \beta_1 \neg$ contro
 l'alternativa bilaterale assume valore:
 
 Occorre svolgere i calcoli: (1.325 - 1)/0.23 = 0.325/0.23 = 1.413043478\\
 
-Per stimare il modello di regressione lineare
+Per stimare il modello di regressione lineare $Y = \beta_0 + \beta_1X + \epsilon$ sulla
+base di n osservazioni il criterio dei minimi quadrati minimizza $\sum_{i=1,..,n} y_i - \beta_0 - \beta_1X$
 
 \subsection{Note}
 
