@@ -1,6 +1,14 @@
 \section{RSE - Residual Standard Error}
-\[ RSE = \sqrt{\frac{RSS}{n - 2}} \]
-\`E una stima della radice della varianza degli errori $\epsilon$. Pu\`o essere 
+\[ RSE = \sqrt{\frac{RSS}{n - 2}} \]\\
+
+o viceversa,
+
+\[ RSS = RSE^2 (n-2) \]\\
+
+La seconda è più utile perchè il riassunto del modello in R fornisce solo
+il valore di RSE.
+
+RSE è una stima della radice della varianza degli errori $\epsilon$. Pu\`o essere 
 interpretata come la deviazione media della risposta dalla vera retta di 
 regressione lineare.\\
 Un RSE basso \`e indice di un buon modello, il problema \`e che non ci possono 
