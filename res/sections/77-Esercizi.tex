@@ -79,9 +79,26 @@ Occorre svolgere i calcoli: (1.325 - 1)/0.23 = 0.325/0.23 = 1.413043478\\
 Per stimare il modello di regressione lineare $Y = \beta_0 + \beta_1X + \epsilon$ sulla
 base di n osservazioni il criterio dei minimi quadrati minimizza $\sum_{i=1,..,n} y_i - \beta_0 - \beta_1X$
 
-\subsection{Note}
+\subsection{Ulteriori note}
 
-Le variabili dummy create da R per variabili qualitative seguono l'ordinamento lessicografico.\\
+Le variabili dummy create da R per variabili qualitative seguono
+l'ordinamento lessicografico.\\
 
-Il principio di gerarchia stabilisce che se è presente un termine interazione allora anche i termini
-che lo compongono devono essere presenti nel modello.
+Il principio di gerarchia stabilisce che se è presente un termine
+interazione allora anche i termini che lo compongono devono essere presenti
+nel modello.\\
+
+Scrivere nelle assunzioni che, se il numero di osservazioni è grande (>30),
+allora nel calcolo degli intervalli di confidenza e nel test delle ipotesi
+si usa la distribuzione normale (scriverlo anche se si dà per scontato).\\
+
+$R^2$ tende a variare sempre un po' se si aggiungono/tolgono covarianti a un
+modello. Occorre osservare i p-value associati ai covarianti per stabilire se
+sono significativi o no.\\
+
+Il grafico con la distanza di Cooq mostra l'influenza che hanno le osservazioni/
+punti. Se ci sono degli outliers (punti che vanno fuori dalla distanza di Cooq)
+occorre toglierli dal modello e valutare cosa succede.\\
+
+Rileggere sempre bene le domande così da vedere se si stanno tralasciando 
+risposte, calcoli o spiegazioni/assunzioni ecc...
