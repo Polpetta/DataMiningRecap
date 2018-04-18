@@ -48,8 +48,29 @@ Le stime $\hat{\beta_0}$ e $\hat{\beta_1}$ sono valori che minimizzano
 la seguente funzione di likelihood:
 
 \begin{equation}
-L(\beta_0, \beta_1) = \prod_{i:y_i = 1} P(y_i=1|x_i) \prod_{j:y_j = 0} \{1 - P(y_j=1|x_j)\}
+L(\beta_0, \beta_1) = \prod_{i:y_i = 1} P(y_i=1|x_i)
+\prod_{j:y_j = 0} \{1 - P(y_j=1|x_j)\}
 \end{equation}
+
+\subsection{Accuratezza di un modello di regressione logistica}
+
+Un concetto simile a $R^2$ per la regressione lineare, in questo caso è la
+devianza.
+
+Data la più grande likelihood $L_max$ del modello saturato, e data la
+likelihood del modello corrente, $L_mod$, la devianza è:
+
+$dev = 2(log L_max - log L_mod)$.
+
+Se il modello è buono, allora $Dev \sim X^2_{n-p-1}$, altrimenti se il valore
+di Dev è più grande non è soddisfacente.
+
+Si consideri un modello $M_1$ con $p_1$ covarianti e un modello $M_2$ con
+$p_2$ covarianti, più semplici di $M_1$.
+
+La differenza tra le devianze dei modelli dà un'indicazione sulla semplificazione
+effettuata: se segue una distribuzione $X^2_{p_1 - p_2}$ allora la semplificazione
+è legittima; altrimenti il modello $M_2$ non è giustificabile.
 
 
 
