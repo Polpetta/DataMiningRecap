@@ -28,4 +28,13 @@ Dove:
 molte osservazioni ($y_0$, $x_0$)
 \end{itemize}
 
-In generale vogliamo costruire un modello tale che questa quantit\`a sia minima. A volte abbiamo a disposizione osservazioni non usate come \textit{training set}. In questi casi \`e possibile valutare la quantit\`a. Altre volte, invece, queste osservazioni non sono disponibili. In questi casi di solito si sceglie il modello che minimizza il \textit{training MSE}, anche se spesso non equivale a minimizzare il \textit{test MSE}.
+In generale vogliamo costruire un modello tale che questa quantit\`a sia minima.
+A volte abbiamo a disposizione osservazioni non usate come \textit{training set}.
+In questi casi \`e possibile valutare la quantit\`a. Altre volte, invece, queste
+osservazioni non sono disponibili. In questi casi di solito si sceglie il modello
+che minimizza il \textit{training MSE}, anche se spesso non equivale a minimizzare
+il \textit{test MSE}.\\
+
+Nel caso in cui y sia una \textbf{variabile qualitativa}:
+
+\[ MSE = \frac{1}{n} \sum_{i=1}^n I(y_i \neq \hat{y_i}) \]

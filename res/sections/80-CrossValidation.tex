@@ -1,0 +1,57 @@
+\section{Cross Validation}
+
+È una tecnica per valutare l'accuratezza di un modello.
+
+Vengono presi a ripetizione diversi sottoinsiemi di dati
+dall'insieme di test è si osserva come il modello si comporta per
+ciascuno di essi.
+
+\subsection{Leave-one-out cross validation}
+
+Procedura:
+
+\begin{itemize}
+ \item Dividere il data set in un training set con n-1 osservazioni
+(se ne lascia fuori una: $x_i$).
+ \item Usare il modello ottenuto usando questo training set per predirre
+$\hat{y_i}$ data l'osservazione $x_i$ lasciata fuori.
+ \item Calcolare $MSE_i$ (MSE per questo modello).
+ \item Riptere la procedura per ogni i.
+\end{itemize}
+
+Al termine avremo n MSE per ogni modello generato.
+
+La stima del test error rate utilizzando questo metodo è:
+$\frac{1}{n} \sum_{i=1}^n MSE_i$
+
+Questo metodo ha un rischio minore di sottostimare il test
+error rate, ma un costo computazionale elevato per modelli complessi.
+
+\subsection{k-fold cross validation}
+
+Procedura:
+
+\begin{itemize}
+ \item Dividere il data set in k gruppi che abbiano approssimativamente
+la stessa dimensione.
+ \item Solo uno di questi gruppi viene usato per calcolare l'error test
+rate.
+ \item Ripetere k volte usando lasciando usando un gruppo diverso
+di volta in volta.
+ \item Di solito k=5,10.
+\end{itemize}
+
+La stima del test error rate è: $\frac{1}{k} \sum_{i=1}^k MSE_i$
+
+Quando k = n questo metodo equivale la leave-one-out cross validation,
+altrimenti è computazionalmente meno oneroso.
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,8 @@
 
 \subsection{Domande a risposta multipla}
 
-In the estimated linear regression model $\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X$ we have $\hat{\beta_1} = 0$. Thus:
+In the estimated linear regression model
+$\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X$ we have $\hat{\beta_1} = 0$. Thus:
 
 \begin{itemize}
 \item \textbf{$R^2 = 0$} - risposta esatta
@@ -77,7 +78,8 @@ l'alternativa bilaterale assume valore:
 Occorre svolgere i calcoli: (1.325 - 1)/0.23 = 0.325/0.23 = 1.413043478\\
 
 Per stimare il modello di regressione lineare $Y = \beta_0 + \beta_1X + \epsilon$ sulla
-base di n osservazioni il criterio dei minimi quadrati minimizza $\sum_{i=1,..,n} y_i - \beta_0 - \beta_1X$
+base di n osservazioni il criterio dei minimi quadrati minimizza
+$\sum_{i=1,..,n} y_i - \beta_0 - \beta_1X$
 
 \subsection{Ulteriori note}
 
@@ -99,6 +101,13 @@ sono significativi o no.\\
 Il grafico con la distanza di Cooq mostra l'influenza che hanno le osservazioni/
 punti. Se ci sono degli outliers (punti che vanno fuori dalla distanza di Cooq)
 occorre toglierli dal modello e valutare cosa succede.\\
+
+Nel modello di regressione lineare multipla l'ipotesi di test di riferimento
+(f-statistic riportata da R) è quella valutata su tutti i parametri dei
+covarianti. Se si vuole confrontare due modelli innestati, l'ipotesi fa riferimento
+solo a parametri dei covarianti aggiunti/tolti. $RSS_0$ fa riferimento al modello
+con meno parametri... F non può essere negativo. Solitamente quando si aggiungono
+parametri a un modello questo diventa più preciso e RSS diminuisce.\\
 
 Rileggere sempre bene le domande così da vedere se si stanno tralasciando 
 risposte, calcoli o spiegazioni/assunzioni ecc...

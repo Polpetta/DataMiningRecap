@@ -17,7 +17,7 @@ Una ``soluzione'' consiste nell'usare una funzione che restituisca valori reali
 solamente nell'intervallo [0,1]. Il modello comunemente utilizzato per questo
 scopo è il \textbf{modello di regressione logistica}.
 
-\begin{equation}
+\begin{equation} \label{eq:log}
 P(Y=1|X) = \frac{e^{\beta_0+\beta_1 X}}{1 + e^{\beta_0+\beta_1 X}}
 \end{equation}
 
@@ -57,10 +57,10 @@ L(\beta_0, \beta_1) = \prod_{i:y_i = 1} P(y_i=1|x_i)
 Un concetto simile a $R^2$ per la regressione lineare, in questo caso è la
 devianza.
 
-Data la più grande likelihood $L_max$ del modello saturato, e data la
-likelihood del modello corrente, $L_mod$, la devianza è:
+Data la più grande likelihood $L_{max}$ del modello saturato, e data la
+likelihood del modello corrente, $L_{mod}$, la devianza è:
 
-$dev = 2(log L_max - log L_mod)$.
+$dev = 2(log L_{max} - log L_{mod})$.
 
 Se il modello è buono, allora $Dev \sim X^2_{n-p-1}$, altrimenti se il valore
 di Dev è più grande non è soddisfacente.
@@ -71,6 +71,61 @@ $p_2$ covarianti, più semplici di $M_1$.
 La differenza tra le devianze dei modelli dà un'indicazione sulla semplificazione
 effettuata: se segue una distribuzione $X^2_{p_1 - p_2}$ allora la semplificazione
 è legittima; altrimenti il modello $M_2$ non è giustificabile.
+
+\subsection{Linear discriminant analysis - LDA}
+
+Nel modello di regressione logistica si ottiene P(Y|X) tramite l'equazione
+~\ref{eg:log}.
+
+In LDA si modella la distribuzione di X per ogni classi di risposta di Y e
+successivamente si utilizza il teorema di Bayes per ottenere P(Y|X).
+
+Se X segue una distribuzione normale allora i risultati sono comparabili a
+quelli di una regressione logistica.
+
+Si supponga che le classi di Y siano più di 2, diciamo $K$.
+
+Componenti:
+
+\begin{itemize}
+ \item $\pi_k = P(Y = k)$: probabilità a priori - probabilità che un'osservazione
+scelta in modo casuale provenga dalla k-esima classe.
+ \item $f_k(X)$: funzione di densità di X per un'osservazione che proviene dalla
+k-esima classe.
+ \item Teorema di Bayes: $p_k(X) = P(Y = k|X = x) =
+\frac{\pi_kf_k(X)}{\sum_{j=1}^K \pi_jf_j(x)}$
+\end{itemize}
+
+Seguono molti calcoli\dots
+
+LDA assegna un'osservazione X = x alla classe per la quale la \textbf{funzione
+discriminante} $\hat{\delta_k(x)}$ è maggiore.
+
+Per K classi vengono costruite K-1 funzioni di discriminazione lineari.
+
+La confusion matrix è utile per capire quante delle predizioni fatte sono
+corrette e quante errate. Quando si analizza questa tabella è utile
+tenere conto del \textbf{training error rate}, una stima ottimistica che
+tende a sottovalutare il \textbf{test error rate}.
+
+In R si crea un modello LDA con la funzione \texttt{lda()}, che fa parte
+della libreria MASS. Data una variabile quantitativa Y e dei covarianti
+X, il comando da dare è:
+\texttt{lda.fit=lda(Y~X,data=dataSet,subset=trainingSet)}.
+
+Con il comando \texttt{plot(lda.fit)} è possibile visualizzare
+i discriminatori lineari per ciascuna osservazione dal set di training
+data.
+
+Un buon modello dovrebbe suddividere ``chiaramente'' le osservazioni
+nelle categorie di Y.
+
+
+
+
+
+
+
 
 
 
