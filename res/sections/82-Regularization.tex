@@ -1,0 +1,46 @@
+\newpage
+
+\section{Regularization}
+
+Come fare quando p è molto grande rispetto a n? p>>n?
+
+Ci sono diversi metodi per far fronte a questo problema
+
+\begin{itemize}
+ \item Model selection
+ \item Regularization
+ \item dimension reduction methods
+\end{itemize}
+
+\subsection{Penalized likelihood}
+
+$Q(\beta|X,y) = L(\beta|X,y) + P_{\lambda}(\beta)$
+
+$P_{\lambda}(\beta)$ è il termine di penalizzazione dei parametri
+che risultano irrealistici (li fa avvicinare a 0, intercetta
+esclusa).
+
+Le variabili devono essere normalizzate prima di applicare questo
+metodo. $\lambda$ è il \textbf{parametro di tuning} che controlla
+il trade-off tra L e P.
+
+La normalizzazione di una variabile X con valore atteso $\mu$ e
+varianza $\sigma$ avviene in questo modo:
+
+\begin{equation}
+\frac{X-\mu}{\sigma}
+\end{equation}
+
+\subsection{Ridge regression}
+
+\begin{equation}
+Q(\beta|X,y) = RSS + \lambda \sum_{j = 1}^p \beta_j ^2
+\end{equation}
+
+Anche in questo caso il valore di $\lambda$ influisce
+il modello. Se è troppo grande, i coefficienti si avvicinano
+molto a 0, altrimenti si ottiene lo stesso effetto della stima
+dei minimi quadrati.
+
+La ridge regression si usa in caso di grande variabilità nei
+dati.
