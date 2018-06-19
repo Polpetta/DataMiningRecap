@@ -1,4 +1,3 @@
-\newpage
 \section{Esercizi}
 
 \subsection{Domande a risposta multipla}
@@ -112,3 +111,64 @@ parametri a un modello questo diventa più preciso e RSS diminuisce.\\
 
 Rileggere sempre bene le domande così da vedere se si stanno tralasciando 
 risposte, calcoli o spiegazioni/assunzioni ecc...
+
+\subsection{Note - parte 2}
+
+\begin{itemize}
+ \item Controllare i residui e i residui standardizzati con
+\texttt{hist(modello.residui)}, dovrebbero avere una distribuzione
+normale attorno allo zero
+ \item \texttt{pairs(...)} genera grafici di dispersione
+ \item Fare l'analisi dei residui per ogni modello stimato
+ \item Confrontare i modelli con anova nel caso in cui si vogliano
+aggiungere/togliere variabili o aumentare/diminuire il grado di un polinomio
+ \item Comando \texttt{glm(formula,data,family)}, family default fa
+regressione lineare, settata a bynomial fa regressione
+logistica
+ \item Il grafico del boxplot si può fare anche con termini di interazione
+ \item \texttt{boxplot(y $\sim$ X)} rappresenta la relazione tra y e X.
+ \item Nella classificazione: \texttt{prob <- predict(model.training,
+newdata=test.set,type=...)}
+ \item Funzione lda() per l'analisi discriminante
+\end{itemize}
+
+Per regressione ridge:
+
+\texttt{library(glmnet)}
+
+\texttt{m.ridge <- glmnet(X, y, alpha=0)} : alpha a 0 per ridge, a 1 per lasso
+
+\texttt{plot(m.ridge)} : plotta i valori di lambda e i coefficienti
+
+\texttt{names(m.ridge)}
+
+Per la cross validation settare sempre il seed e riportarlo nella relazione.
+
+Stesso seed per regressione ridge e per regressione con lasso.
+
+\texttt{set.seed(...)}
+
+\texttt{cv.ridge <- cv.glmnet(X, y, alpha=0)}
+
+\texttt{plot(cv.ridge)} : stima MSE e l'intervallo di confidenza associato per
+ogni valore di lambda
+
+Per trovare il miglior valore di lambda:
+
+\texttt{best.lambda <- cv.ridge\$lambda.min}
+
+Ri-stima del modello:
+
+\texttt{m.ridge.min <- glmnet(X, y, alpha=0, lambda=best.lambda)}
+
+La devianza spiegata massima si ha in corrispondenza di lambda minimo:
+
+\texttt{max(m.ridge.min\$dev.ratio)} $\rightarrow$ massimizzare
+
+Per inserire uno spline:
+
+\texttt{library(splines)}
+
+\texttt{ns(x, grado)}
+
+\texttt{extractAIC(modello)} $\rightarrow$ minimizzare
