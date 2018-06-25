@@ -1,0 +1,174 @@
+\section{Esercizi}
+
+\subsection{Domande a risposta multipla}
+
+In the estimated linear regression model
+$\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X$ we have $\hat{\beta_1} = 0$. Thus:
+
+\begin{itemize}
+\item \textbf{$R^2 = 0$} - risposta esatta
+\item $R^2 = 1$
+\item $R^2 = -1$
+\item none of the above
+\end{itemize}
+
+In the hypothesis testing, the observed significance level (\textbf{p-value}) is:
+
+\begin{itemize}
+\item between 0 and $+\infty$
+\item between -1 and 1
+\item the type II error
+\item \textbf{none of the above} - risposta esatta
+\end{itemize}
+
+In a linear regression model, the accuracy of the least squares estimates is measured using:
+
+\begin{itemize}
+\item \textbf{standard error} - risposta esatta
+\item correlation
+\item bias
+\item sum of the residuals
+\end{itemize}
+
+Errors in the linear regression model are assumed to be:
+
+\begin{itemize}
+\item with mean equal to 1
+\item with variance equal to 1
+\item \textbf{incorrelated with the covariates} - risposta esatta
+\item incorrelated with Y
+\end{itemize}
+
+Il livello di significatività osservato (detto anche p-value) è:
+
+\begin{itemize}
+\item \textbf{una probabilità} - risposta esatta
+\item l'errore di secondo tipo
+\item una variabile casuale
+\item una misura del legame lineare tra X e Y
+\end{itemize}
+
+Il residual standard error (RSE) per un modello $Y = \beta_0 + \beta_1X + \epsilon$
+con errori che si assumono $N(0,\sigma^2)$ e che viene stimato ai minimi quadrati è:
+
+\begin{itemize}
+\item la stima di $\beta_1$
+\item la stima della media degli errori
+\item \textbf{la stima di $\sigma$} - risposta esatta
+\item il p-value associato al test di bontà di adattamento del modello
+\end{itemize}
+
+In un modello di regressione lineare, il problema della multicollinearità deriva da:
+
+\begin{itemize}
+\item bassa correlazione tra gli errori $\epsilon$ e la risposta
+\item bassa correlazione tra tutte le esplicative
+\item \textbf{alta correlazione tra almeno due esplicative} - risposta esatta
+\item bassa correlazione tra almeno un errore $\epsilon$ e le esplicative
+\end{itemize}
+
+Il residuo in un modello in cui $y_1$ indica l’osservazione i-esima della variabile
+risposta e $\hat{y_i}$ la previsione basata sul modello è pari a: $y_i - \hat{y_i}$\\
+
+Sia dato il modello di regressione lineare semplice $Y = \beta_0 + \beta_1X + \epsilon$
+Sia 1.325 la stima ai minimi quadrati di $\beta_1$ e 0.23 il suo standard error. 
+La statistica test per la verifica d'ipotesi per $H_0 : \beta_1 \neq 1$ contro
+l'alternativa bilaterale assume valore:
+
+Occorre svolgere i calcoli: (1.325 - 1)/0.23 = 0.325/0.23 = 1.413043478\\
+
+Per stimare il modello di regressione lineare $Y = \beta_0 + \beta_1X + \epsilon$ sulla
+base di n osservazioni il criterio dei minimi quadrati minimizza
+$\sum_{i=1,..,n} y_i - \beta_0 - \beta_1X$
+
+\subsection{Ulteriori note}
+
+Le variabili dummy create da R per variabili qualitative seguono
+l'ordinamento lessicografico.\\
+
+Il principio di gerarchia stabilisce che se è presente un termine
+interazione allora anche i termini che lo compongono devono essere presenti
+nel modello.\\
+
+Scrivere nelle assunzioni che, se il numero di osservazioni è grande (>30),
+allora nel calcolo degli intervalli di confidenza e nel test delle ipotesi
+si usa la distribuzione normale (scriverlo anche se si dà per scontato).\\
+
+$R^2$ tende a variare sempre un po' se si aggiungono/tolgono covarianti a un
+modello. Occorre osservare i p-value associati ai covarianti per stabilire se
+sono significativi o no.\\
+
+Il grafico con la distanza di Cooq mostra l'influenza che hanno le osservazioni/
+punti. Se ci sono degli outliers (punti che vanno fuori dalla distanza di Cooq)
+occorre toglierli dal modello e valutare cosa succede.\\
+
+Nel modello di regressione lineare multipla l'ipotesi di test di riferimento
+(f-statistic riportata da R) è quella valutata su tutti i parametri dei
+covarianti. Se si vuole confrontare due modelli innestati, l'ipotesi fa riferimento
+solo a parametri dei covarianti aggiunti/tolti. $RSS_0$ fa riferimento al modello
+con meno parametri... F non può essere negativo. Solitamente quando si aggiungono
+parametri a un modello questo diventa più preciso e RSS diminuisce.\\
+
+Rileggere sempre bene le domande così da vedere se si stanno tralasciando 
+risposte, calcoli o spiegazioni/assunzioni ecc...
+
+\subsection{Note - parte 2}
+
+\begin{itemize}
+ \item Controllare i residui e i residui standardizzati con
+\texttt{hist(modello.residui)}, dovrebbero avere una distribuzione
+normale attorno allo zero
+ \item \texttt{pairs(...)} genera grafici di dispersione
+ \item Fare l'analisi dei residui per ogni modello stimato
+ \item Confrontare i modelli con anova nel caso in cui si vogliano
+aggiungere/togliere variabili o aumentare/diminuire il grado di un polinomio
+ \item Comando \texttt{glm(formula,data,family)}, family default fa
+regressione lineare, settata a bynomial fa regressione
+logistica
+ \item Il grafico del boxplot si può fare anche con termini di interazione
+ \item \texttt{boxplot(y $\sim$ X)} rappresenta la relazione tra y e X.
+ \item Nella classificazione: \texttt{prob <- predict(model.training,
+newdata=test.set,type=...)}
+ \item Funzione lda() per l'analisi discriminante
+\end{itemize}
+
+Per regressione ridge:
+
+\texttt{library(glmnet)}
+
+\texttt{m.ridge <- glmnet(X, y, alpha=0)} : alpha a 0 per ridge, a 1 per lasso
+
+\texttt{plot(m.ridge)} : plotta i valori di lambda e i coefficienti
+
+\texttt{names(m.ridge)}
+
+Per la cross validation settare sempre il seed e riportarlo nella relazione.
+
+Stesso seed per regressione ridge e per regressione con lasso.
+
+\texttt{set.seed(...)}
+
+\texttt{cv.ridge <- cv.glmnet(X, y, alpha=0)}
+
+\texttt{plot(cv.ridge)} : stima MSE e l'intervallo di confidenza associato per
+ogni valore di lambda
+
+Per trovare il miglior valore di lambda:
+
+\texttt{best.lambda <- cv.ridge\$lambda.min}
+
+Ri-stima del modello:
+
+\texttt{m.ridge.min <- glmnet(X, y, alpha=0, lambda=best.lambda)}
+
+La devianza spiegata massima si ha in corrispondenza di lambda minimo:
+
+\texttt{max(m.ridge.min\$dev.ratio)} $\rightarrow$ massimizzare
+
+Per inserire uno spline:
+
+\texttt{library(splines)}
+
+\texttt{ns(x, grado)}
+
+\texttt{extractAIC(modello)} $\rightarrow$ minimizzare

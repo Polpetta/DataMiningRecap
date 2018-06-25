@@ -18,6 +18,9 @@ $R^2$ si ottiene quindi:
 \frac{devianza\ residua}{devianza\ totale} = 1 - \frac{\sum_{i=1}^n (y_i - 
 \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \overline{y})^2} \]
 
+Più la devianza spiegata e la devianza totale sono simili, più il modello è
+accurato.
+
 \paragraph*{Propriet\`a}
 \begin{itemize}
  \item $0 \le R^2 \le 1$
@@ -27,3 +30,8 @@ osservazioni
 \textit{overfitting}, e inoltre $R^2$ \`e una stima ottimistica, e quindi anche 
 se alto non \`e detto che vada veramente bene il modello.
 \end{itemize}
+
+$R^2$ varia tra 0 ed 1: quando è 0 il modello utilizzato non spiega per
+nulla i dati; quando è 1 il modello spiega perfettamente i dati.
+
+Nota: nel modello di regressione lineare $R^2 = \rho_{X,Y}^2$

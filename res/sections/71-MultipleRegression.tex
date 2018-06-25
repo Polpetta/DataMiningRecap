@@ -1,0 +1,25 @@
+\section{Modello di regressione lineare multiplo}
+
+A volte un solo predittore non è sufficiente a descrivere in modo completo
+un modello.
+
+Un modello di regressione lineare multiplo con p covarianti associati a p
+parametri ha la forma:\\
+
+$Y = \beta_0 + \beta_1X_1 + ... + \beta_pX_p + \epsilon$\\
+
+dove $X_j$ rappresenta il j-esimo predittore e $\beta_j$ quantifica il legame
+tra $X_j$ e $Y$.\\
+
+Sia X una matrice con $n*p$ predittori e $\beta$ il vettore dei parametri.
+Il modello di regressione lineare diventa:\\
+
+$Y = X\beta$\\
+
+L'accuratezza del modello si valuta tramite $R^2$ e l'analisi dei residui.
+
+Gli intervalli di confidenza e i test delle ipotesi per ciascuno dei p parametri
+si svolgono come nel caso ``semplice'', sostituendo $t_{n-2}$ con $t_{n-p-1}$
+
+
+

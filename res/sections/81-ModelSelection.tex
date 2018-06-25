@@ -1,0 +1,98 @@
+\section{Model selection}
+
+Un buon modello non deve essere troppo semplice (bias elevato) e nemmeno
+troppo complesso (rischio di overfitting), sta nel ``mezzo''.
+
+\textbf{Il modello perfetto non esiste}.
+
+Non esistono regole per inserire i termini nel modello (polinomiali?
+termini di interazione?)
+
+I grafici possono essere usati come guida per intuire o ipotizzare relazioni
+tra i covarianti. Quali di queste relazioni hanno senso per il problema in esame?
+
+Quali strumenti abbiamo visto per scegliere un modello?
+
+\begin{itemize}
+ \item RSS o $R^2$ ma affidarsi solo a loro incrementa il rischio di overfitting.
+ \item Analisi dei residui.
+ \item F test.
+ \item Test di validazione (training vs test), cross validation
+ \item Training error e test error
+\end{itemize}
+
+Altri criteri visti:
+
+\begin{itemize}
+ \item adjusted $R^2$
+ \item AIC
+ \item BIC
+\end{itemize}
+
+\subsection{Adjusted $R^2$}
+
+Se il numero di covarianti nel modello aumenta, RSS diminuisce
+e $R^2$ aumenta, con il rischio di overfitting.
+
+L'adjusted $R^2$ penalizza $R^2$ in base al numero di covarianti presenti:\\
+
+$\overline{R^2} = R^2 - (1-R^2)\frac{p}{n-p-1}$\\
+
+$\overline{R^2}$ paga un prezzo per l'inclusione di variabili inutili in un
+modello.
+
+\subsection{Akaike information criterion - AIC}
+
+$AIC = 2p - 2log(\hat{\theta})$
+
+dove p = penalizzazione e $\hat{\theta}$ = maximum likelihood estimate.
+
+Per il modello di regressione lineare: $AIC = nlog(RSS) + 2p$.
+
+Per il modello di regressione logistica: $AIC = Devianza + 2p$.
+
+\subsection{Bayesian information criterion - BIC}
+
+$BIC = plog(n) - 2log(\theta)$
+
+dove p = penalizzazione e $\theta$ = likelihood.
+
+Per il modello di regressione lineare: $BIC = nlog(RSS) + plog(n)$.
+
+Per il modello di regressione logistica: $BIC = Devianza + plog(n)$.\\
+
+Più piccoli sono AIC e BIC, più basso è il test error del modello.
+
+La comparazione tra modelli basata su AIC e BIC non richiede che siano
+innestati, al contrario di F.
+
+Dipendono dall'unità di misura di Y.
+
+\subsection{Valutazione automatica di modelli}
+
+Si valuta un insieme di modelli e si fa un rank in base a uno o più
+criteri mostrati di seguito.
+
+\begin{itemize}
+ \item \textbf{Best subsets selection}: ricerca su ogni possibile
+combinazione del numero di covarianti di un problema... computazionalmente
+inefficiente.
+ \item \textbf{Stepwise selection}: ricerca su un sottoinsieme di
+modelli di dimensione $1 + \frac{p(p+1)}{2}$.
+\end{itemize}
+
+\subsection{Stepwise selection}
+
+\begin{itemize}
+ \item \textbf{Forward selection}: ricerca del
+miglior modello a partire da 1 covariante, poi 2, 3 ecc\dots
+ \item \textbf{Backward selection}: si parte dal modello con
+tutti i covarianti, poi se ne toglie uno alla volta e si
+valutano i modelli ottenuti aggiornando quando necessario il
+migliore.
+ \item \textbf{Hybrid selection}: si aggiungono i covarianti
+come nell'approccio forward, ma si rimuovono quando non
+portano miglioramenti.
+\end{itemize}
+
+
